@@ -95,4 +95,4 @@
                 (car lst)
                 (ate (- k 1) (cdr lst))))))
 
-(write (ate 2 '(3 2 1)))
+(write (ate 4 '(3 2 1 5 6 7 8)))

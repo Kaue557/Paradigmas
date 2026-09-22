@@ -79,4 +79,22 @@
         ((eql elt (car lst)) t)
         (t (membro elt (cdr lst)))))
 
-(write (ff '(a b c a b c a y y y d a d x x x b)))
+; (write (ff '(a b c a b c a y y y d a d x x x b)))
+
+(defun quantif (lst) (quantif* (deldup lst) lst))
+
+(defun quantif* (lst lor)
+    (cond
+        ((null lst) nil)
+        (t
+            (let*
+                ((elt (car lst))
+                (n (qtos elt lor))
+                (dupla (list elt n)))
+            (cons dupla (quantif* (cdr lsr) lor))))))
+
+(defun qtos (elt lst)
+    (cond
+        ((null lst) 0)
+        ((eql elt (car lst)) (+ 1 (qtos elt (cdr lst))))
+        (t (qtos elt (cdr lst)))))

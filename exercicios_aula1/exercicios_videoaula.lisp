@@ -95,4 +95,14 @@
                 (car lst)
                 (ate (- k 1) (cdr lst))))))
 
-(write (ate 4 '(3 2 1 5 6 7 8)))
+; (write (ate 4 '(3 2 1 5 6 7 8)))
+; (format t "~%")
+
+; APÓS O K-ÉSIMO
+(defun apos (k lst)
+    (cond
+        ((null lst) nil)
+        ((eql k 0) lst) ; se chegar no 0, devolve a lista toda
+        (t (apos (- k 1) (cdr lst))))) ; senão, vai diminuindo o k
+
+(write (apos 3 '(1 2 3 4 5 6 7)))

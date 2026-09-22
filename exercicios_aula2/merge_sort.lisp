@@ -12,7 +12,7 @@ MERGE SORT
         ((null (cdr lst)) (list (cons (car lst) l1) l2))
         (t (split* (cddr lst) (cons (car lst) l1) (cons (cadr lst) l2)))))
 
-(format t "SPLIT: ")
+(format t "SPLIT (não precisa estar ordenado): ")
 (write (split '(33 78 55 2 3 1)))
 (format t "~%")
 

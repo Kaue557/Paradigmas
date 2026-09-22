@@ -105,4 +105,19 @@
         ((eql k 0) lst) ; se chegar no 0, devolve a lista toda
         (t (apos (- k 1) (cdr lst))))) ; senão, vai diminuindo o k
 
-(write (apos 3 '(1 2 3 4 5 6 7)))
+; (write (apos 3 '(1 2 3 4 5 6 7)))
+; (format t "~%")
+
+; MENOR ELEMENTO
+(defun menor (lst)
+    (cond
+        ((null lst) nil)
+        (t (menor* (cdr lst) (car lst)))))
+
+(defun menor* (lst men)
+    (cond
+        ((null lst) men)
+        ((< (car lst) men) (menor* (cdr lst) (car lst)))
+        (t (menor* (cdr lst) men))))
+
+(write (menor '(19 22 31 44 5 10 12 7 3 9)))

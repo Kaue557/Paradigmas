@@ -10,3 +10,5 @@
         ((null lst) (list elt))
         ((<= elt (car lst)) (cons elt lst))
         (t (cons (car lst) (insere elt (cdr lst))))))
+
+(write (isort '(3 5 2 1 78 55)))

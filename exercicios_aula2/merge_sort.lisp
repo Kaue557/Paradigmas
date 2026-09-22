@@ -5,7 +5,6 @@ MERGE SORT
 ;SPLIT
 (defun split (lst) (split* lst nil nil))
 
-
 (defun split* (lst l1 l2)
     ;EU DIVIDO A LISTA EM DUAS PARTES
     (cond
@@ -13,7 +12,9 @@ MERGE SORT
         ((null (cdr lst)) (list (cons (car lst) l1) l2))
         (t (split* (cddr lst) (cons (car lst) l1) (cons (cadr lst) l2)))))
 
-(write (split '(1 2 3 4 5 6 7 8 9)))
+(format t "SPLIT: ")
+(write (split '(33 78 55 2 3 1)))
+(format t "~%")
 
 ;MERGESORT
 (defun ms (lst)
@@ -37,3 +38,6 @@ MERGE SORT
                 (cond
                     ((<= e1 e2) (cons e1 (inter (cdr l1) l2)))
                     (t (cons e2 (inter l1 (cdr l2)))))))))
+
+(format t "SORT: ")
+(write (ms '(33 78 55 2 3 1)))

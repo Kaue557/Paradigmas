@@ -6,7 +6,7 @@ qs([P|L],R) :-
     partit(P,L,Lmen,Lmai),
     qs(Lmen,Rmen),
     qs(Lmai,Rmai),
-    append(Rmen,[P|Rmai],R).
+    append(Rmen,[P|Rmai])
 
 partit(_,[],[],[]). % "independente do pivô, se a lista 1 e lista 2 forem vazias, o resultado é uma lista vazia(?)"
 partit(P,[A|As],[A|Lmen],Lmai) :-

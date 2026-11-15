@@ -3,7 +3,7 @@
 bubble(L,R) :- bubble(L,L,R).
 
 bubble([_|X],Lac,Lac),
-bubble([_,X],Lac,R) :- le % FINALIZAR (NÃO TEM FOTO)
+bubble([_,X],Lac,R) :- le % FINALIZAR AQUI (NÃO TEM FOTO)
 
 levemai([A],[A]).
 levemai([E,A|X],[A|Y]) :-

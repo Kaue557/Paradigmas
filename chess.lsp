@@ -5,7 +5,7 @@
 ;------------------------------------------------
 ;
 ; COMO EXECUTAR:
-;   sbcl --script chess.lisp
+;   sbcl --script chess.lsp
 ; e depois digitar a entrada no teclado:
 ;   (chess ("tcbdrbct" "pppppppp" 8 8 8 8 "PPPPPPPP" "TCBDRBCT"))
 ; Saída esperada:
@@ -23,7 +23,8 @@
 ;   Números = casas vazias consecutivas (notação Forsyth);
 ;   um 8 sozinho é uma linha inteira vazia. A primeira linha da lista é a linha 0 (topo,
 ;   onde ficam as pretas); a última é a linha 7 (onde ficam as brancas).
-
+; CAVALO: (chess (8 8 8 8 8 "4c3" 8 "4R3"))
+; CAVALO nao ataca: (chess (8 8 8 8 8 "3c4" 8 "4R3"))
 
 ; EXPANDIR A NOTAÇÃO FORSYTH -----------------------------------------
 ; Na notação Forsyth, dígitos dentro de uma linha representam casas vazias

@@ -1,10 +1,3 @@
-l1([90,7,1,3,7,54,3,2,9]).
-/*lista usada para ordenações*/
-
-lrle([a,a,a,a,a,b,b,b,b,c,c,c,d,a,a,a,a,a,a]).
-
-lrld([(a,5),(b,4),(c,3),(d,1),(a,6)]).
-
 /*rle (run lenght encoding)*/
 
 rle([],[]). /*se lista vazia - devolve vazia*/

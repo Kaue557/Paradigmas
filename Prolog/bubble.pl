@@ -1,14 +1,19 @@
 % BUBBLE SORT
 
-bubble(L,R) :- bubble(L,L,R).
+bubble([],[]). /*se lista vazia*/
+bubble(L,R) :-
+    bubble(L,L,R).
+    /*predicado diferente do de cima, é uma lista que diz quantas vezes usaremos o levmai sobre a lista(?)*/
 
-bubble([_|X],Lac,Lac),
-bubble([_,X],Lac,R) :- le % FINALIZAR AQUI (NÃO TEM FOTO)
+bubble([],Lac,Lac).
+bubble([_|X],Lac,R) :-
+    levmai(Lac,Lac2),
+    bubble(X,Lac2,R).
 
-levemai([A],[A]).
-levemai([E,A|X],[A|Y]) :-
-    E > A,
-    levemai([E|X],Y).
-% SE 'E' NÃO FOR MAIOR QUE 'A'
-levemai([A|X],[A,Y]) :-
-    levemai(X,Y).
+levmai([],[]). /*se lista vazia*/
+levmai([A],[A]). /*se so tem um elemento*/
+levmai([A,B|X],[B|Y]) :-
+    B < A,
+    levmai([A|X],Y).
+levmai([A|X],[A|Y]) :-
+    levmai(X,Y).
